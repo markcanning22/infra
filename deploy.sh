@@ -21,3 +21,7 @@ do
   kubectl apply -f "$service"-depl.yaml
   kubectl rollout restart deployment "$service-depl"
 done
+
+cd "$INFRA_ROOT/k8s" || exit
+echo "Deploying posts-nodeport-srv"
+kubectl apply -f posts-nodeport-srv.yaml
